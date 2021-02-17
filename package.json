@@ -4,8 +4,8 @@
   "description": "A minimal Electron Demo application",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js --no-sandbox",
-    "test": "electron --inspect --remote-debugging-port=9223 main.js --no-sandbox"
+    "start": "electron main.js --no-sandbox --use-gl=egl",
+    "test": "electron --inspect --remote-debugging-port=9223 main.js --no-sandbox --use-gl=egl"
   },
   "keywords": [
     "Ka-Ro",
