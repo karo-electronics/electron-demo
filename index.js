@@ -1,7 +1,7 @@
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 var fs = require('fs')
 
-$(function () {
+$(function() {
     $("#main").load("home.html");
 });
 
@@ -10,13 +10,15 @@ function pageload(page) {
         // call upgradeDom() to register newly added mdl elements
         componentHandler.upgradeDom();
         $('.mdl-layout')[0].MaterialLayout.toggleDrawer();
-        if (page === 'brightness') {
-            fs.readFile('/sys/class/backlight/lcd-backlight/brightness', 'utf-8', (err, x) => {
-                if (err)
+        if (page === 'hardware') {
+            // set trigger to timer
+            fs.writeFile('/sys/class/leds/Heartbeat/trigger', 'timer', (err) => {
+                if (err) {
                     console.log(err);
-                else
-                    // parseInt because readFile comes with linefeed
-                    $('#brightness_slider')[0].MaterialSlider.change(parseInt(x));    
+                } else {
+                    frequency(2);
+                    $('#frequency_slider')[0].MaterialSlider.change(2);
+                }
             });
         }
     });
@@ -25,12 +27,17 @@ function pageload(page) {
 function alert() {
     $('#demo-snackbar-example')[0].MaterialSnackbar.showSnackbar({
         message: 'You have been alerted',
-        timeout: 3000,
+        timeout: 2000,
     });
 }
 
-function brightness(x) {
-    fs.writeFile('/sys/class/backlight/lcd-backlight/brightness', x, (err) => {
+function frequency(x) {
+    let frequency = 1000 - x;
+    fs.writeFile('/sys/class/leds/Heartbeat/delay_off', frequency, (err) => {
+        if (err)
+            console.log(err);
+    });
+    fs.writeFile('/sys/class/leds/Heartbeat/delay_on', frequency, (err) => {
         if (err)
             console.log(err);
     });

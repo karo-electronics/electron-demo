@@ -1,59 +1,69 @@
 <!DOCTYPE html>
+
 <head>
-  <title>Ka-Ro Demo</title>
-  <!-- Insert this line above script imports  -->
-  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-  <!-- jQuery -->
-  <script src="lib/jquery.min.js"></script>
-  <!-- load Material Design Lite -->
-  <link rel="stylesheet" href="lib/material-icons.css">
-  <link rel="stylesheet" href="lib/material.orange-indigo.min.css">
-  <script defer src="lib/material.min.js"></script>
-  <!-- Our Files -->
-  <link href="karo.css" rel="stylesheet">
-  <script src="./index.js" charset="utf-8"></script>
-  <!-- Insert this line after script imports -->
-  <script>if (window.module) module = window.module;</script>
+    <title>Ka-Ro Demo</title>
+    <!-- Insert this line above script imports  -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <!-- jQuery -->
+    <script src="lib/jquery.min.js"></script>
+    <!-- load Material Design Lite -->
+    <link rel="stylesheet" href="lib/material-icons.css">
+    <link rel="stylesheet" href="lib/material.orange-indigo.min.css">
+    <script defer src="lib/material.min.js"></script>
+    <!-- Our Files -->
+    <link href="karo.css" rel="stylesheet">
+    <script src="./index.js" charset="utf-8"></script>
+    <!-- Insert this line after script imports -->
+    <script>
+        if (window.module) module = window.module;
+    </script>
 </head>
+
 <body>
-  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Ka-Ro electronics GmbH</span>
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Ka-Ro electronics GmbH</span>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
             <i class="material-icons">search</i>
           </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="search">
-            <label class="mdl-textfield__label" for="search">Search...</label>
-          </div>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="search">
+                        <label class="mdl-textfield__label" for="search">Search...</label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="nav" class="demo-drawer mdl-layout__drawer">
+            <header class="demo-drawer-header">
+                <img style="margin-top: 5px; margin-left: 5px; margin-bottom: 20px; max-width: 200px;" src="images/karo-logo.png">
+            </header>
+            <nav class="demo-navigation mdl-navigation">
+                <a onclick="pageload('home')" class="mdl-navigation__link"><i class="material-icons" role="presentation">home</i> Home</a>
+                <a onclick="pageload('hardware')" class="mdl-navigation__link"><i class="material-icons" role="presentation">settings_brightness</i> Hardware Control</a>
+                <a onclick="pageload('video')" class="mdl-navigation__link"><i class="material-icons" role="presentation">ondemand_video</i> Video</a>
+                <a class="mdl-navigation__link"><i class="material-icons" role="presentation">shopping_cart</i> Page 2</a>
+                <a class="mdl-navigation__link"><i class="material-icons" role="presentation">people</i> Page 3</a>
+            </nav>
         </div>
-      </div>
-    </header>
-    <div id="nav" class="demo-drawer mdl-layout__drawer">
-      <header class="demo-drawer-header">
-        <img style="margin-top: 5px; margin-left: 5px; margin-bottom: 20px; max-width: 200px;" src="images/karo-logo.png">
-      </header>
-      <nav class="demo-navigation mdl-navigation">
-        <a onclick="pageload('home')" class="mdl-navigation__link"><i class="material-icons" role="presentation">home</i> Home</a>
-        <a onclick="pageload('brightness')" class="mdl-navigation__link"><i class="material-icons" role="presentation">settings_brightness</i> Brightness</a>
-        <a onclick="pageload('video')" class="mdl-navigation__link"><i class="material-icons" role="presentation">ondemand_video</i> Video</a>
-        <a class="mdl-navigation__link"><i class="material-icons" role="presentation">shopping_cart</i> Page 2</a>
-        <a class="mdl-navigation__link"><i class="material-icons" role="presentation">people</i> Page 3</a>
-      </nav>
+        <main id="main" class="mdl-layout__content mdl-color--grey-200">
+            <!-- content gets loaded here -->
+        </main>
+        <section style="text-align: center;" class="docs-text-styling download mdl-color--grey-900">
+            <img id="kangaroo" src="images/kangaroo.png">
+        </section>
     </div>
-    <main id="main" class="mdl-layout__content mdl-color--grey-200">
-      <!-- content gets loaded here -->
-    </main>
-    <section style="text-align: center;" class="docs-text-styling download mdl-color--grey-900">
-      <img id="kangaroo" src="images/kangaroo.png">
-    </section>
-  </div>
-  <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar mdl-color--blue-800">
-    <div class="mdl-snackbar__text"></div>
-    <button class="mdl-snackbar__action mdl-color-text--orange-400" type="button"></button>
-  </div>
+    <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar mdl-color--blue-800">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action mdl-color-text--orange-400" type="button"></button>
+    </div>
 </body>
+
 </html>
