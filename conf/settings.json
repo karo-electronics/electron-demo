@@ -1,0 +1,8 @@
+{
+  "v6baseip": "192.168.104.",
+  "v6ipoffset": 100,
+  "testerbank": 1,
+  "pollfrequency": 5000,
+  "logrefresh": 500,
+  "autoopencover": false
+}

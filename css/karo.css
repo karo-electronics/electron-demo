@@ -1,0 +1,254 @@
+.semi-circle {
+    position: relative;
+    margin: 4px;
+    float:left;
+    text-align: center;
+}
+
+.barOverflow { /* Wraps the rotating .bar */
+    position: relative;
+    overflow: hidden; /* Comment this line to understand the trick */
+    width: 330px; height: 165px; /* Half circle (overflow) */
+    margin-bottom: -14px; /* bring the numbers up */
+}
+
+.bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 330px; height: 330px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    border: 30px solid #eee;     /* half gray, */
+    border-bottom-color: #212121;  /* half azure */
+    border-right-color: #212121;
+}
+
+.inner-bar-c {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 270px; height: 270px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 30px solid #eee;     /* half gray, */
+    border-bottom-color: rgb(157, 255, 0);  /* half azure */
+    border-right-color: rgb(163, 200, 255);
+    border-left-color: rgb(255, 30, 0);
+    transform: rotate(200deg);
+
+}
+
+.inner-bar-ppm {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 270px; height: 270px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 30px solid #eee;     /* half gray, */
+    border-bottom-color: rgb(116, 116, 116);  /* half azure */
+    border-right-color: rgb(0, 255, 157);
+    transform: rotate(225deg);
+}
+
+.inner-bar-rh {
+    position: absolute;
+    top: 30px; left: 30px;
+    width: 270px; height: 270px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 30px solid #eee;     /* half gray, */
+    border-bottom-color: rgb(0, 255, 157);  /* half azure */
+    border-right-color: rgb(187, 187, 187);  /* half azure */
+    border-left-color: rgb(163, 200, 255);
+    transform: rotate(185deg);
+}
+
+
+#kangaroo {
+    margin: 5px;
+    height: 50px;
+}
+
+.tester-status-success>.material-icons.success {
+    color: rgb(98, 238, 98);
+    font-size: 100px;
+}
+
+.tester-status-ready>.material-icons.ready {
+    color: grey;
+    font-size: 100px;
+}
+
+.tester-status-offline>.material-icons.offline {
+    color: grey;
+    font-size: 100px;
+}
+
+.tester-status-running>.material-icons.running {
+    font-size: 100px;
+}
+
+.tester-status-failure>.material-icons.failure {
+    color: red;
+    font-size: 100px;
+}
+
+.tester-status {
+    text-align: center;
+}
+
+.test-actions {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mdl-chip__text {
+    font-size: 20px;
+}
+
+.btn-lg {
+    height: 60px;
+}
+
+.btn-xl {
+    height: 80px;
+}
+
+#stopall_button {
+    margin-right: 10px;
+}
+
+#reload_project_button {
+    margin-right: 10px;
+}
+
+.logs-container {
+    height: 560px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #212121;
+    color: white;
+}
+
+p.tester-status-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+pre {
+    white-space: normal;
+}
+
+code {
+    display: block;
+    white-space: pre-wrap
+}
+
+.settings-card {
+    width: 100%;
+}
+
+.settings-field {
+    padding: 0;
+    padding-left: 16px;
+}
+
+.settings-grid {
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 7px;
+    padding-bottom: 0;
+}
+
+.virtual-keyboard {
+    z-index: 1;
+    font-size: 25px;
+}
+
+.virtual-keyboard .key {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    margin: .2rem;
+    padding: .3rem .7rem;
+    line-height: 3rem;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid lightgrey;
+    border-radius: .3rem;
+    color: grey;
+    white-space: nowrap;
+    min-width: 3rem;
+}
+
+.badge-grey {
+    color: #fff;
+    background-color: grey;
+}
+
+.badge-dark {
+    color: #fff;
+    background-color: #343a40;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: rgb(98, 238, 98);
+}
+
+.badge-error {
+    color: #fff;
+    background-color: red;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.mdl-textfield__input {
+    font-size: 20px;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    font-size: 16px;
+}
+
+.mdl-dialog {
+    width: 70%;
+}
+
+.mdl-data-table {
+    font-size: 16px;
+    white-space: normal;
+}
+
+.mdl-data-table th {
+    font-size: 18px;
+}
+
+.anr-td {
+    font-size: 18px;
+}
+
+td > i.success {
+    font-size: 30px;
+    color:rgb(98, 238, 98);
+}
+
+td > i.failure {
+    font-size: 30px;
+    color: red;
+}
+
+td > nobr > i {
+    vertical-align: sub;
+}

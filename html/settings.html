@@ -1,0 +1,25 @@
+<div class="settings-grid mdl-grid">
+  <div id="brightness_card" class="settings-card module-card-wide demo-card-wide mdl-card mdl-shadow--3dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Brightness Control</h2>
+    </div>
+    <div class="settings-field mdl-card__supporting-text">
+      <ul class="demo-list-item mdl-list">
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <p>
+              <i class="material-icons">brightness_low</i>
+            </p>
+            <p style="width:500px">
+              <input id="brightness_slider" oninput="brightness(value)" class="mdl-slider mdl-js-slider" type="range"
+                min="5" max="100" value="0" tabindex="0">
+            </p>
+            <p>
+              <i class="material-icons">brightness_high</i>
+            </p>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
