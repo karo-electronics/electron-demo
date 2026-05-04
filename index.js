@@ -1,7 +1,7 @@
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 var fs = require('fs')
 
-$(function () {
+$(function() {
     $("#main").load("home.html");
 });
 
@@ -11,7 +11,7 @@ function pageload(page) {
         componentHandler.upgradeDom();
         $('.mdl-layout')[0].MaterialLayout.toggleDrawer();
         if (page === 'brightness') {
-            fs.readFile('/sys/class/backlight/lcd-backlight/brightness', 'utf-8', (err, x) => {
+            fs.readFile('/sys/class/backlight/*/brightness', 'utf-8', (err, x) => {
                 if (err)
                     console.log(err);
                 else
@@ -30,7 +30,7 @@ function alert() {
 }
 
 function brightness(x) {
-    fs.writeFile('/sys/class/backlight/lcd-backlight/brightness', x, (err) => {
+    fs.writeFile('/sys/class/backlight/*/brightness', x, (err) => {
         if (err)
             console.log(err);
     });
