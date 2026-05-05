@@ -4,8 +4,8 @@
   "description": "A minimal Electron Demo application",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js --no-sandbox --disable-gpu-sandbox --enable-features=UseOzonePlatform --ozone-platform=wayland --use-gl=egl --ignore-gpu-blacklist --enable-zero-copy --enable-gpu-rasterization --enable-native-gpu-memory-buffers",
-    "test": "electron --inspect --remote-debugging-port=9223 main.js --no-sandbox"
+    "start": "electron main.js --no-sandbox --enable-features=UseOzonePlatform --ozone-platform=wayland",
+    "test": "electron --inspect --remote-debugging-port=9223 main.js --no-sandbox --enable-features=UseOzonePlatform --ozone-platform=wayland"
   },
   "keywords": [
     "Ka-Ro",
